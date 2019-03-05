@@ -19,12 +19,18 @@ const action = type => store.dispatch({ type });
 
 function render() {
   ReactDOM.render(
-    <Counter
-      value={store.getState()}
-      onIncrement={() => action('INCREMENT')}
-      onDecrement={() => action('DECREMENT')}
-      onIncrementAsync={() => action('FETCH_REQUESTED')}
-    />,
+    <div>
+      <Counter
+        value={store.getState()}
+        onIncrement={() => action('INCREMENT')}
+        onDecrement={() => action('DECREMENT')}
+        onIncrementAsync={() => action('FETCH_REQUESTED')}
+      />
+      <div>
+        <button onClick={() => action('LOGIN')}>Login</button>
+        <button onClick={() => action('LOGOUT')}>Logout</button>
+      </div>
+    </div>,
     document.getElementById('root')
   );
 }
